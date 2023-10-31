@@ -6,48 +6,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BMI Calculate</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
 </head>
 <script>
-  
-    
-     function bodyload(){
-      var lbl=document.getElementById("lblResult");
-      var value=document.getElementById("YourValue");
-      var age=document.getElementById("txtAge");
-      var height=document.getElementById("txtHeight").value;
-      var weight=document.getElementById("txtWeight").value;
-      height = height * 12;
-      height = height * 0.025;      
-      var result = weight / (height * height);
-      result = Math.round(result)
-     
-      lbl.innerHTML=result;
-      
-      if(result>=1 && result<=25)
-      {
-        value.style.marginLeft = "150px";
-        value.style.transition="1s";
-      }
-      else if(result>26 && result<=50)
-      {
-        value.style.marginLeft = "300px";
-        value.style.transition="1.4s";
-      }
-      else if(result>50 && result<=70)
-      {
-        value.style.marginLeft = "450px";
-        value.style.transition="1.5s";
-      }
-      else if(result>70 && result<=100)
-      {
-        value.style.marginLeft = "600px";
-        value.style.transition="2s";
-      }
-     }
-  
+
+
+    function bodyload() {
+        var lbl = document.getElementById("lblResult");
+        var value = document.getElementById("YourValue");
+        var age = document.getElementById("txtAge");
+        var height = document.getElementById("txtHeight").value;
+        var weight = document.getElementById("txtWeight").value;
+        var male = document.getElementById("optMale");
+        var female = document.getElementById("optFemale");
+        height = height * 12;
+        height = height * 0.025;
+        var result = weight / (height * height);
+        result = Math.round(result)
+
+        lbl.innerHTML = result;
+
+        if (male.checked) {
+            if (result >= 1 && result <= 25) {
+                value.style.marginLeft = "150px";
+                value.style.transition = "1s";
+            }
+            else if (result > 26 && result <= 50) {
+                value.style.marginLeft = "300px";
+                value.style.transition = "1.4s";
+            }
+            else if (result > 50 && result <= 70) {
+                value.style.marginLeft = "450px";
+                value.style.transition = "1.5s";
+            }
+            else if (result > 70 && result <= 100) {
+                value.style.marginLeft = "600px";
+                value.style.transition = "2s";
+            }
+        }
+        if (Female.checked) {
+            if (result >= 1 && result <= 18) {
+                value.style.marginLeft = "100px";
+                value.style.transition = "1s";
+            }
+            else if (result > 18 && result <= 40) {
+                value.style.marginLeft = "150px";
+                value.style.transition = "1.4s";
+            }
+            else if (result > 40 && result <= 50) {
+                value.style.marginLeft = "310px";
+                value.style.transition = "1.5s";
+            }
+            else if (result > 50 && result <= 68) {
+                value.style.marginLeft = "400px";
+                value.style.transition = "2s";
+            }
+        }
+    }
+
 </script>
+
 <body class="bg-black">
 
     <div class="container-fluid bg-light p-5" style="margin-top: 10%;">
@@ -74,7 +96,8 @@
                     </div>
                     <div class="col">
                         <div>WEIGHT</div>
-                        <input type="number" id="txtWeight" placeholder="in Kgs" autocomplete="off"  class="form-control">
+                        <input type="number" id="txtWeight" placeholder="in Kgs" autocomplete="off"
+                            class="form-control">
                     </div>
                     <div class="row mt-4 text-center">
                         <div class="col ">
@@ -97,7 +120,7 @@
                     <div class="progress-bar bg-danger ms-1 " style="width: 25%;"></div>
                 </div>
                 <div id="YourValue">
-                    <span class="bi bi-caret-down-fill" 
+                    <span class="bi bi-caret-down-fill"
                         style="font-size: 23px; margin-top: -11px; display: inline-block;"></span>
                     <div style="margin-top: -10px; color: gray;"><b>You</b></div>
                 </div>
