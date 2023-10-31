@@ -10,25 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
 <script>
-    /*
-     function bodyload(){
-       var Result=document.getElementById("lblResult");
-      var Male=document.getElementById("optMale");
-      var Female=document.getElementById("optFemale");
-      var Age=document.getElementById("txtAge").value;
-      var height=document.getElementById("txtHeight").value;
-      var Weight=document.getElementById("txtWeight").value;
-      if(Male.checked)
-      {
-       Result.innerHTML="male";
-      }
-      if(Female.checked)
-      {
-       Result.innerHTML="female";
-       
-      }
-     }
-   */
+  
     
      function bodyload(){
       var lbl=document.getElementById("lblResult");
@@ -82,17 +64,17 @@
                     </div>
                     <div class="col">
                         <div>AGE</div>
-                        <input type="text" id="txtAge" class="form-control">
+                        <input type="number" id="txtAge" class="form-control">
                     </div>
                 </div>
                 <div class="row mt-5">
                     <div class="col">
                         <div>HEIGHT</div>
-                        <input type="text" id="txtHeight" class="form-control">
+                        <input type="number" id="txtHeight" placeholder="cm" required class="form-control">
                     </div>
                     <div class="col">
                         <div>WEIGHT</div>
-                        <input type="text" id="txtWeight" class="form-control">
+                        <input type="number" id="txtWeight" placeholder="in Kgs" autocomplete="off"  class="form-control">
                     </div>
                     <div class="row mt-4 text-center">
                         <div class="col ">
