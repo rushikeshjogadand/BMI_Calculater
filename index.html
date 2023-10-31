@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculate</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<script>
+    /*
+     function bodyload(){
+       var Result=document.getElementById("lblResult");
+      var Male=document.getElementById("optMale");
+      var Female=document.getElementById("optFemale");
+      var Age=document.getElementById("txtAge").value;
+      var height=document.getElementById("txtHeight").value;
+      var Weight=document.getElementById("txtWeight").value;
+      if(Male.checked)
+      {
+       Result.innerHTML="male";
+      }
+      if(Female.checked)
+      {
+       Result.innerHTML="female";
+       
+      }
+     }
+   */
+    
+     function bodyload(){
+      var lbl=document.getElementById("lblResult");
+      var value=document.getElementById("YourValue");
+      var age=document.getElementById("txtAge");
+      var height=document.getElementById("txtHeight").value;
+      var weight=document.getElementById("txtWeight").value;
+      height = height * 12;
+      height = height * 0.025;      
+      var result = weight / (height * height);
+      result = Math.round(result)
+     
+      lbl.innerHTML=result;
+      
+      if(result>=1 && result<=25)
+      {
+        value.style.marginLeft = "150px";
+        value.style.transition="1s";
+      }
+      else if(result>26 && result<=50)
+      {
+        value.style.marginLeft = "300px";
+        value.style.transition="1.4s";
+      }
+      else if(result>50 && result<=70)
+      {
+        value.style.marginLeft = "450px";
+        value.style.transition="1.5s";
+      }
+      else if(result>70 && result<=100)
+      {
+        value.style.marginLeft = "600px";
+        value.style.transition="2s";
+      }
+     }
+  
+</script>
+<body class="bg-black">
+
+    <div class="container-fluid bg-light p-5" style="margin-top: 10%;">
+        <div class="row">
+            <div class="col me-5">
+                <div class="row">
+                    <div class="col">
+                        <div class="mb-2">GENDER</div>
+                        <input type="radio" name="Gender" id="optMale" class="form-check-input " checked> <label
+                            class="form-check-label ">
+                            Male</label>
+                        <input type="radio" name="Gender" id="optFemale" class="form-check-input ms-5"> <label
+                            class="form-check-label"> Female</label>
+                    </div>
+                    <div class="col">
+                        <div>AGE</div>
+                        <input type="text" id="txtAge" class="form-control">
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <div class="col">
+                        <div>HEIGHT</div>
+                        <input type="text" id="txtHeight" class="form-control">
+                    </div>
+                    <div class="col">
+                        <div>WEIGHT</div>
+                        <input type="text" id="txtWeight" class="form-control">
+                    </div>
+                    <div class="row mt-4 text-center">
+                        <div class="col ">
+                            <button class="btn btn-warning ps-5 pe-5" onclick="bodyload()">Calculate</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col ms-5">
+                <div class="text-center mb-3 text-danger" style="font-size: 20px;">
+                    <b>Your BMI is</b>
+                </div>
+                <div class="text-center mb-4">
+                    <b><span id="lblResult" class=" ps-3 pe-3"></span></b>
+                </div>
+                <div class="progress w-100" style="height: 10px;">
+                    <div class="progress-bar bg-warning" style="width: 25%;"></div>
+                    <div class="progress-bar ms-1  " style="width: 25%; background-color: green;"></div>
+                    <div class="progress-bar ms-1 " style="width: 25%; background-color: orange;"></div>
+                    <div class="progress-bar bg-danger ms-1 " style="width: 25%;"></div>
+                </div>
+                <div id="YourValue">
+                    <span class="bi bi-caret-down-fill" 
+                        style="font-size: 23px; margin-top: -11px; display: inline-block;"></span>
+                    <div style="margin-top: -10px; color: gray;"><b>You</b></div>
+                </div>
+                <div class="row">
+                    <div class="col"><b>Underweight</b></div>
+                    <div class="col"><b>Normal</b></div>
+                    <div class="col"><b>Overweight</b></div>
+                    <div class="col"> <b>Obesity</b></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+</body>
+
+</html>
