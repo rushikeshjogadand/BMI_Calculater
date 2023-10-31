@@ -19,8 +19,8 @@
         var lbl = document.getElementById("lblResult");
         var value = document.getElementById("YourValue");
         var age = document.getElementById("txtAge");
-        var height = document.getElementById("txtHeight").value;
-        var weight = document.getElementById("txtWeight").value;
+        var height = parseFloat(document.getElementById("txtHeight").value);
+        var weight =parseFloat( document.getElementById("txtWeight").value);
         var male = document.getElementById("optMale");
         var female = document.getElementById("optFemale");
         height = height * 12;
